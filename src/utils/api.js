@@ -1,6 +1,6 @@
 // utils/api.js
 
-const API_URL = '';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 export const apiRequest = async (path, method = 'GET', body = null, token = null) => {
   const headers = { 'Content-Type': 'application/json' };
