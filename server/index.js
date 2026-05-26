@@ -12,7 +12,20 @@ import { verifyToken } from './middleware/authMiddleware.js';
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://advikaa.vercel.app'
+];
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1 || origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
+    return callback(new Error('CORS policy block'), false);
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 const client = new MongoClient(process.env.MONGODB_URI);
