@@ -1,0 +1,349 @@
+/* =============================================
+   ADVIKA IVF CENTER — GLOBAL STYLES
+   Color System: Kumkum (#8B111B) + Kesar (#D58F4B)
+   LIGHT / WARM WHITE THEME
+   ============================================= */
+
+:root {
+  /* Kumkum (deep red-maroon) */
+  --k900: #5E0C13;
+  --k700: #8B111B;
+  --k500: #B63A45;
+  --k300: #E6A3A8;
+  --k100: #F9E8EA;
+  --k50:  #FDF3F4;
+
+  /* Kesar (saffron gold) */
+  --s900: #9A5F2E;
+  --s700: #D58F4B;
+  --s500: #E6A96E;
+  --s300: #F3CFA7;
+  --s100: #FCF3E8;
+
+  /* Neutrals */
+  --warm:   #F8F5F2;
+  --white:  #FFFFFF;
+  --lgrey:  #E5E5E5;
+  --mgrey:  #8A8A8A;
+  --dgrey:  #2E2E2E;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(139,17,27,0.07);
+  --shadow-md: 0 8px 32px rgba(139,17,27,0.10);
+  --shadow-lg: 0 20px 60px rgba(139,17,27,0.13);
+
+  /* Transitions */
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--warm);
+  color: var(--dgrey);
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeLegibility;
+  font-size: 15px;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--warm); }
+::-webkit-scrollbar-thumb { background: var(--k300); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--k700); }
+
+/* ============ TYPOGRAPHY ============ */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--k900);
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============ LAYOUT ============ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* ============ SECTION HEADERS ============ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--k700);
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--k700);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--k900);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.section-sub {
+  font-size: 1rem;
+  color: var(--mgrey);
+  max-width: 560px;
+  line-height: 1.75;
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--k700), var(--s700));
+  border-radius: 2px;
+  margin: 20px 0 48px;
+}
+
+/* ============ BUTTONS ============ */
+.btn-primary-k {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--k700);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--k700);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-primary-k:hover {
+  background: var(--k900);
+  border-color: var(--k900);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139,17,27,0.3);
+}
+
+.btn-outline-k {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--k700);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid var(--k700);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-outline-k:hover {
+  background: var(--k100);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: var(--s700);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-gold:hover {
+  background: var(--s900);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(213,143,75,0.3);
+}
+
+/* ============ CARDS ============ */
+.card-base {
+  background: var(--white);
+  border: 1px solid var(--lgrey);
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.card-base:hover {
+  border-color: var(--k300);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* ============ STICKY TOP BAR ============ */
+.topbar {
+  background: var(--k700);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+
+.topbar__btn {
+  background: #fff;
+  color: var(--k700);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.topbar__btn:hover {
+  background: var(--s700);
+  color: #fff;
+}
+
+/* ============ TRUST BADGES ============ */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--white);
+  border: 1px solid var(--lgrey);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--dgrey);
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-badge svg,
+.trust-badge i {
+  color: var(--k700);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139,17,27,0.3); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 12px rgba(139,17,27,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(139,17,27,0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes shimmer-bg {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ============ NOISE TEXTURE (subtle) ============ */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* ============ HIGHLIGHT TEXT ============ */
+.text-kumkum { color: var(--k700); }
+.text-kesar  { color: var(--s700); }
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--k700) 0%, var(--s700) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============ SECTION BACKGROUNDS ============ */
+.bg-warm   { background: var(--warm); }
+.bg-white  { background: var(--white); }
+.bg-k50    { background: var(--k50); }
+.bg-k100   { background: var(--k100); }
+.bg-s100   { background: var(--s100); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+  .container { padding: 0 18px; }
+}
+
+@media (max-width: 480px) {
+  .section { padding: 56px 0; }
+}
+
+/* ============ GPU SCROLL ACCELERATION LAYER ============ */
+.hero-section, .whyus-sec, .testimonials-sec, .contact-sec {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}
